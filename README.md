@@ -8,10 +8,10 @@ var requirejsRelease = require('gulp-requirejs-release')
 
 ```js
 gulp.task('default', function() {
-	requirejsRelease({
-		jshint: {
-			src: 'src/**/*.js'
-		}
-	})
+  requirejsRelease({
+    jshint: {
+      src: 'src/**/*.js'
+    }
+  })
 })
 ```
