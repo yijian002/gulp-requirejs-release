@@ -1,0 +1,36 @@
+{
+  "name": "gulp-requirejs-release",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Vic Yang",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yijian002/gulp-requirejs-release.git"
+  },
+  "devDependencies": {
+    "gulp-html-imports": "^1.0.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-requirejs-optimize": "^1.3.0"
+  },
+  "keywords": [
+    "gulp",
+    "requirejs",
+    "html",
+    "js",
+    "r.js",
+    "replace",
+    "gulp-jshint",
+    "gulp-requirejs-optimize",
+    "gulp-html-imports",
+    "production"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yijian002/gulp-requirejs-release/issues"
+  },
+  "homepage": "https://github.com/yijian002/gulp-requirejs-release#readme"
+}
