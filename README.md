@@ -37,7 +37,7 @@ gulp.task('jshint', function() {
 gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
-      src: 'src/js/*.js'
+      src: 'src/js/*.js',
       dest: './dist'
     }
   })
@@ -52,7 +52,7 @@ Accepts almost all of the same options as [r.js optimize](https://github.com/req
 gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
-      src: 'src/js/*.js'
+      src: 'src/js/*.js',
       options: {
           optimize: 'none',
           insertRequire: ['foo/bar/bop']
@@ -96,7 +96,7 @@ gulp.task('requirejsOptimize', function() {
 gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
-      src: 'src/js/*.js'
+      src: 'src/js/*.js',
       dest: './dist'
     },
     sourcemaps: true
@@ -112,7 +112,7 @@ gulp.task('requirejsOptimize', function() {
 gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
-      src: 'src/js/*.js'
+      src: 'src/js/*.js',
       dest: './dist'
     },
     sourcemaps: {
