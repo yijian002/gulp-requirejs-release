@@ -69,7 +69,7 @@ gulp.task('requirejsOptimize', function() {
 gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
-      src: 'src/js/*.js'
+      src: 'src/js/*.js',
       options: function(file) {
         return {
           name: '../vendor/bower/almond/almond',
