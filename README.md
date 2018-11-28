@@ -66,6 +66,40 @@ gulp.task('requirejsOptimize', function() {
 })
 ```
 
+### sourcemaps
+
+#### Simple
+
+```js
+gulp.task('requirejsOptimize', function() {
+  requirejsRelease({
+    optimize: {
+      src: 'src/js/*.js'
+      dest: './dist'
+    },
+    sourcemaps: true
+  })
+})
+```
+
+#### Custom options
+
+```js
+gulp.task('requirejsOptimize', function() {
+  requirejsRelease({
+    optimize: {
+      src: 'src/js/*.js'
+      dest: './dist'
+    },
+    sourcemaps: {
+      initOptions: {largeFile: true},
+      writePath: '../maps',
+      writeOptions: {addComment: false}
+    }
+  })
+})
+```
+
 ---
 
 Copyright © 2018 [Vic Yang](https://github.com/yijian002)
