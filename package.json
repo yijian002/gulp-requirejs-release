@@ -25,10 +25,12 @@
     "js",
     "r.js",
     "replace",
-    "gulp-jshint",
-    "gulp-requirejs-optimize",
     "gulp-html-imports",
-    "production"
+    "gulp-jshint",
+    "gulp-load-plugins",
+    "gulp-requirejs-optimize",
+    "production",
+    "release"
   ],
   "license": "ISC",
   "bugs": {

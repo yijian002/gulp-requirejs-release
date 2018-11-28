@@ -2,8 +2,8 @@
 
 let gulp = require('gulp')
 let plugins = require('gulp-load-plugins')()
-let onEndOfStream = require('end-of-stream')
-let consumeStream = require('stream-consume')
+// let onEndOfStream = require('end-of-stream')
+// let consumeStream = require('stream-consume')
 
 const jshint = require('./src/jshint')
 const requirejsOptimize = require('./src/requirejsOptimize')
@@ -64,15 +64,17 @@ module.exports = function(opts) {
 
     // Init the lib/comm.js
     comm.init(opts)
-    comm.log('Begin iterator.', 'gulp-requirejs-release')
+    comm.log('Iterator begin...', 'gulp-requirejs-release')
 
     // Gulp task arrange async steps
     let iterator = function* () {
         yield* jshint(opts.jshint, plugins)
         yield* optimize(opts)
-    }
+    }()
 
-    arrangeAsyncSteps(iterator())
+    arrangeAsyncSteps(iterator, function() {
+        comm.log('Iterator end !', 'gulp-requirejs-release')
+    })
 
     // gulp-jshint
     // if (opts.jshint) {
