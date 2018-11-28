@@ -38,7 +38,7 @@ gulp.task('default', function() {
 
 ### Custom options
 
-gulp-requirejs-optimize accepts almost all of the same options as [r.js optimize](https://github.com/requirejs/r.js/blob/master/build/example.build.js) (see below).
+Accepts almost all of the same options as [r.js optimize](https://github.com/requirejs/r.js/blob/master/build/example.build.js) (see below).
 
 ```js
 gulp.task('default', function() {
