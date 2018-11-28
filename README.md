@@ -8,7 +8,7 @@ var requirejsRelease = require('gulp-requirejs-release')
 ## jshint
 
 ```js
-gulp.task('default', function() {
+gulp.task('jshint', function() {
   requirejsRelease({
     jshint: {
       src: 'src/**/*.js'
@@ -22,7 +22,7 @@ gulp.task('default', function() {
 ### Simple
 
 ```js
-gulp.task('default', function() {
+gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
       src: 'src/js/*.js'
@@ -37,7 +37,7 @@ gulp.task('default', function() {
 Accepts almost all of the same options as [r.js optimize](https://github.com/requirejs/r.js/blob/master/build/example.build.js) (see below).
 
 ```js
-gulp.task('default', function() {
+gulp.task('requirejsOptimize', function() {
   requirejsRelease({
     optimize: {
       src: 'src/js/*.js'
