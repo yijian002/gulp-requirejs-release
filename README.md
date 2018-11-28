@@ -26,10 +26,6 @@ gulp.task('default', function() {
   requirejsRelease({
     optimize: {
       src: 'src/js/*.js'
-      options: {
-          optimize: 'none',
-          insertRequire: ['foo/bar/bop']
-      },
       dest: './dist'
     }
   })
@@ -49,7 +45,10 @@ gulp.task('default', function() {
           optimize: 'none',
           insertRequire: ['foo/bar/bop']
       },
-      dest: './dist'
+      dest: function(destPath, filePath) {
+        // destPath default is "./"
+        return destPath
+      }
     }
   })
 })

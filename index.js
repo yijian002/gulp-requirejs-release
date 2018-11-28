@@ -49,8 +49,8 @@ function* optimize(opts) {
     if (!setting.dest) {
         setting.dest = opts.destPath
     } else if (typeof setting.dest === 'function') {
-        setting.setDest = (file) => {
-            return setting.dest(opts.destPath, file)
+        setting.setDest = (filePath) => {
+            return setting.dest(opts.destPath, filePath)
         }
     }
 

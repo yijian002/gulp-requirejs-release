@@ -2,9 +2,9 @@ const comm = require('../lib/comm')
 
 var gulp, requirejsOptimize
 
-function dest(file, opts) {
+function dest(filePath, opts) {
     if (opts.setDest) {
-        return opts.setDest(file)
+        return opts.setDest(filePath)
     }
 
     return opts.dest
@@ -28,10 +28,10 @@ module.exports = function* (opts, plugins) {
     }
 
     for (let i = 0; i < opts.src.length; i++) {
-        let file = opts.src[i]
-        let destPath = dest(file, opts)
+        let filePath = opts.src[i]
+        let destPath = dest(filePath, opts)
 
-        yield gulp.src(comm.setBasePath(file))
+        yield gulp.src(comm.setBasePath(filePath))
             .pipe(requirejsOptimize(opts.options || {}))
             .pipe(gulp.dest(destPath))
     }
