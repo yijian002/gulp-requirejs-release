@@ -30,7 +30,8 @@ function arrangeAsyncSteps(iterator, callback) {
         })
 
         consumeStream(asyncStep)
-    } else if (asyncStep && typeof asyncStep.then === 'function') {
+    }
+    else if (asyncStep && typeof asyncStep.then === 'function') {
         // wait for promise to resolve
         asyncStep.then(function() {
             arrangeAsyncSteps(iterator, callback)
@@ -48,7 +49,8 @@ function* optimize(opts) {
     let setting = opts.optimize
     if (!setting.dest) {
         setting.dest = opts.destPath
-    } else if (typeof setting.dest === 'function') {
+    }
+    else if (typeof setting.dest === 'function') {
         setting.setDest = (filePath) => {
             return setting.dest(opts.destPath, filePath)
         }
