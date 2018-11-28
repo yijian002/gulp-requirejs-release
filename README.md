@@ -64,6 +64,28 @@ gulp.task('requirejsOptimize', function() {
     }
   })
 })
+
+// Or
+gulp.task('requirejsOptimize', function() {
+  requirejsRelease({
+    optimize: {
+      src: 'src/js/*.js'
+      options: function(file) {
+        return {
+          name: '../vendor/bower/almond/almond',
+          optimize: 'none',
+          useStrict: true,
+          baseUrl: 'path/to/base',
+          include: 'subdir/' + file.relative
+        }
+      },
+      dest: function(destPath, filePath) {
+        // destPath default is "./"
+        return destPath
+      }
+    }
+  })
+})
 ```
 
 ### sourcemaps
@@ -81,6 +103,8 @@ gulp.task('requirejsOptimize', function() {
   })
 })
 ```
+
+* Map file path: `./dist/*.js.map`
 
 #### Custom options
 
