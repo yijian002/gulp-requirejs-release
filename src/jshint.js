@@ -6,10 +6,11 @@ module.exports = function* (opts, plugins) {
     }
 
     if (!opts.src) {
-        comm.log('Not found the param src.', 'option.jshint')
+        comm.log('Not found the param src.', 'Error.option.jshint')
         return
     }
 
+    // Init plugins
     let gulp = plugins.gulp
     let jshint = plugins.jshint
 

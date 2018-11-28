@@ -12,7 +12,7 @@ const comm = require('./lib/comm')
 plugins.gulp = gulp
 
 function arrangeAsyncSteps(iterator, callback) {
-    let context = iterator.next();
+    let context = iterator.next()
     if (context.done) {
         callback()
         return
@@ -51,9 +51,13 @@ function* optimize(opts) {
         setting.dest = opts.destPath
     }
     else if (typeof setting.dest === 'function') {
-        setting.setDest = (filePath) => {
+        setting.setDest = function(filePath) {
             return setting.dest(opts.destPath, filePath)
         }
+    }
+
+    if(opts.sourcemaps) { // plugins.sourcemaps
+        setting.sourcemaps = opts.sourcemaps
     }
 
     yield* requirejsOptimize(setting, plugins)
@@ -61,7 +65,7 @@ function* optimize(opts) {
 
 module.exports = function(opts) {
     if (typeof opts === 'string') {
-        comm.log('Options must be object.', 'Error option')
+        comm.log('Options must be object.', 'Error.options')
         return
     }
 
@@ -81,7 +85,7 @@ module.exports = function(opts) {
 
     arrangeAsyncSteps(iterator, function(error) {
         if (error) {
-            comm.log(error, 'Iterator Error')
+            comm.log(error, 'Error.Iterator')
             return
         }
 
