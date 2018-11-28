@@ -1,11 +1,23 @@
 # gulp-requirejs-release
 
+## Usage
+
+### Install
+
+```bash
+ $ npm install gulp-requirejs-release --save-dev
+```
+
+### Gulpfile
+
 ```js
 var gulp = require('gulp')
 var requirejsRelease = require('gulp-requirejs-release')
 ```
 
-## jshint
+## Gulp Tasks
+
+### jshint
 
 ```js
 gulp.task('jshint', function() {
@@ -17,9 +29,9 @@ gulp.task('jshint', function() {
 })
 ```
 
-## requirejs-optimize
+### requirejs-optimize
 
-### Simple
+#### Simple
 
 ```js
 gulp.task('requirejsOptimize', function() {
@@ -32,7 +44,7 @@ gulp.task('requirejsOptimize', function() {
 })
 ```
 
-### Custom options
+#### Custom options
 
 Accepts almost all of the same options as [r.js optimize](https://github.com/requirejs/r.js/blob/master/build/example.build.js) (see below).
 
@@ -53,3 +65,7 @@ gulp.task('requirejsOptimize', function() {
   })
 })
 ```
+
+---
+
+Copyright © 2018 [Vic Yang](https://github.com/yijian002)
