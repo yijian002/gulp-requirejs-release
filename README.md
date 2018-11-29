@@ -17,31 +17,35 @@ var requirejsRelease = require('gulp-requirejs-release')
 
 ## Gulp Tasks
 
+```js
+gulp.task('build', function() {
+  requirejsRelease({
+    // To do something...
+  })
+})
+```
+
 ### copy
 
 Copy source files to new destination.
 
 ```js
-gulp.task('copy', function() {
-  requirejsRelease({
-    copy: {
-      src: './src/**',
-      dest: './dest'
-    }
-  })
+requirejsRelease({
+  copy: {
+    src: './src/**',
+    dest: './dest'
+  }
 })
 ```
 
 ### linter
 
 ```js
-gulp.task('linter', function() {
-  requirejsRelease({
-    linter: {
-      src: 'src/**/*.js',
-      options: { linter: 'some-jshint-module' } // Default is "jshint"
-    }
-  })
+requirejsRelease({
+  linter: {
+    src: 'src/**/*.js',
+    options: { linter: 'some-jshint-module' } // Default is "jshint"
+  }
 })
 ```
 
@@ -52,13 +56,11 @@ Optimize AMD modules in javascript files using the requirejs optimizer.
 #### Simple
 
 ```js
-gulp.task('requirejsOptimize', function() {
-  requirejsRelease({
-    optimize: {
-      src: 'src/js/*.js',
-      dest: './dist'
-    }
-  })
+requirejsRelease({
+  optimize: {
+    src: 'src/js/*.js',
+    dest: './dist'
+  }
 })
 ```
 
@@ -67,42 +69,38 @@ gulp.task('requirejsOptimize', function() {
 Accepts almost all of the same options as [r.js optimize](https://github.com/requirejs/r.js/blob/master/build/example.build.js) (see below).
 
 ```js
-gulp.task('requirejsOptimize', function() {
-  requirejsRelease({
-    optimize: {
-      src: 'src/js/*.js',
-      options: {
-          optimize: 'none',
-          insertRequire: ['foo/bar/bop']
-      },
-      dest: function(destPath, filePath) {
-        // Default is "./"
-        return destPath
-      }
+requirejsRelease({
+  optimize: {
+    src: 'src/js/*.js',
+    options: {
+        optimize: 'none',
+        insertRequire: ['foo/bar/bop']
+    },
+    dest: function(destPath, filePath) {
+      // Default is "./"
+      return destPath
     }
-  })
+  }
 })
 
 // Or
-gulp.task('requirejsOptimize', function() {
-  requirejsRelease({
-    optimize: {
-      src: 'src/js/*.js',
-      options: function(file) {
-        return {
-          name: '../vendor/bower/almond/almond',
-          optimize: 'none',
-          useStrict: true,
-          baseUrl: 'path/to/base',
-          include: 'subdir/' + file.relative
-        }
-      },
-      dest: function(destPath, filePath) {
-        // Default is "./"
-        return destPath
+requirejsRelease({
+  optimize: {
+    src: 'src/js/*.js',
+    options: function(file) {
+      return {
+        name: '../vendor/bower/almond/almond',
+        optimize: 'none',
+        useStrict: true,
+        baseUrl: 'path/to/base',
+        include: 'subdir/' + file.relative
       }
+    },
+    dest: function(destPath, filePath) {
+      // Default is "./"
+      return destPath
     }
-  })
+  }
 })
 ```
 
@@ -111,14 +109,12 @@ gulp.task('requirejsOptimize', function() {
 #### Simple
 
 ```js
-gulp.task('requirejsOptimize', function() {
-  requirejsRelease({
-    optimize: {
-      src: 'src/js/*.js',
-      dest: './dist'
-    },
-    sourcemaps: true
-  })
+requirejsRelease({
+  optimize: {
+    src: 'src/js/*.js',
+    dest: './dist'
+  },
+  sourcemaps: true
 })
 ```
 
@@ -127,18 +123,33 @@ gulp.task('requirejsOptimize', function() {
 #### Custom options
 
 ```js
-gulp.task('requirejsOptimize', function() {
-  requirejsRelease({
-    optimize: {
-      src: 'src/js/*.js',
-      dest: './dist'
-    },
-    sourcemaps: {
-      initOptions: {largeFile: true},
-      writePath: '../maps',
-      writeOptions: {addComment: false}
+requirejsRelease({
+  optimize: {
+    src: 'src/js/*.js',
+    dest: './dist'
+  },
+  sourcemaps: {
+    initOptions: {largeFile: true},
+    writePath: '../maps',
+    writeOptions: {addComment: false}
+  }
+})
+```
+
+### html-imports
+
+* Import html files into html files.
+* [gulp-html-imports](https://www.npmjs.com/package/gulp-html-imports)
+
+```js
+requirejsRelease({
+  htmlImports: {
+    src: 'src/*.html',
+    componentsPath: './components/',
+    template: {
+      '_VERSION_': '2018'
     }
-  })
+  }
 })
 ```
 
