@@ -36,7 +36,7 @@ module.exports = function* (opts, plugins) {
     }
 
     if (!opts.src) {
-        comm.log('Not found the param src.', 'Error.options.optimize')
+        comm.log('Not found the param `src`.', 'Error.options.optimize')
         return
     }
 
@@ -60,4 +60,6 @@ module.exports = function* (opts, plugins) {
             yield* optimize(filePath, destPath, opts.options)
         }
     }
+
+    comm.log('Task `requirejsOptimize` finished.', 'Info')
 }

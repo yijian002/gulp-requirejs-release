@@ -9,6 +9,7 @@ let consumeStream = require('stream-consume')
 const copy = require('./src/copy')
 const linter = require('./src/linter')
 const requirejsOptimize = require('./src/requirejsOptimize')
+const htmlImports = require('./src/htmlImports')
 
 // functions
 const comm = require('./lib/comm')
@@ -85,6 +86,11 @@ module.exports = function(opts) {
         yield* copy(opts, plugins)
         yield* linter(opts, plugins)
         yield* optimize(opts)
+        yield* htmlImports(opts, plugins)
+
+        if(opts.callback && typeof opts.callback === 'function') {
+            opts.callback()
+        }
     }()
 
     arrangeAsyncSteps(iterator, function(error) {

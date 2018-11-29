@@ -7,7 +7,7 @@ module.exports = function* (settings, plugins) {
     }
 
     if (!opts.src) {
-        comm.log('Not found the param src.', 'Error.option.copy')
+        comm.log('Not found the param `src`.', 'Error.option.copy')
         return
     }
 
