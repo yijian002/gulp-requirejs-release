@@ -139,7 +139,7 @@ requirejsRelease({
 ### html-imports
 
 * Import html files into html files.
-* [gulp-html-imports](https://www.npmjs.com/package/gulp-html-imports)
+* What is this ?  [gulp-html-imports](https://www.npmjs.com/package/gulp-html-imports)
 
 ```js
 requirejsRelease({
