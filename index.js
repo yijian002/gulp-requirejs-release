@@ -1,14 +1,17 @@
 'use strict'
 
+// plugins
 let gulp = require('gulp')
 let plugins = require('gulp-load-plugins')()
 let onEndOfStream = require('end-of-stream')
 let consumeStream = require('stream-consume')
 
-const jshint = require('./src/jshint')
+const copy = require('./src/copy')
+const linter = require('./src/linter')
 const requirejsOptimize = require('./src/requirejsOptimize')
-const comm = require('./lib/comm')
 
+// functions
+const comm = require('./lib/comm')
 plugins.gulp = gulp
 
 function arrangeAsyncSteps(iterator, callback) {
@@ -79,7 +82,8 @@ module.exports = function(opts) {
 
     // Gulp task arrange async steps
     let iterator = function* () {
-        yield* jshint(opts.jshint, plugins)
+        yield* copy(opts, plugins)
+        yield* linter(opts, plugins)
         yield* optimize(opts)
     }()
 

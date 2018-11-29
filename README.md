@@ -17,13 +17,14 @@ var requirejsRelease = require('gulp-requirejs-release')
 
 ## Gulp Tasks
 
-### jshint
+### Linter
 
 ```js
-gulp.task('jshint', function() {
+gulp.task('linter', function() {
   requirejsRelease({
-    jshint: {
-      src: 'src/**/*.js'
+    linter: {
+      src: 'src/**/*.js',
+      options: { linter: 'some-jshint-module } // Default is `"jshint"`
     }
   })
 })
@@ -58,7 +59,7 @@ gulp.task('requirejsOptimize', function() {
           insertRequire: ['foo/bar/bop']
       },
       dest: function(destPath, filePath) {
-        // destPath default is "./"
+        // Default is `"./"`
         return destPath
       }
     }
@@ -80,7 +81,7 @@ gulp.task('requirejsOptimize', function() {
         }
       },
       dest: function(destPath, filePath) {
-        // destPath default is "./"
+        // Default is `"./"`
         return destPath
       }
     }
@@ -104,7 +105,7 @@ gulp.task('requirejsOptimize', function() {
 })
 ```
 
-* Map file path: `./dist/*.js.map`
+* Map file path: `"./dist/*.js.map"`
 
 #### Custom options
 
