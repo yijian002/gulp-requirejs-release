@@ -17,14 +17,27 @@ var requirejsRelease = require('gulp-requirejs-release')
 
 ## Gulp Tasks
 
-### Linter
+### copy
+
+```js
+gulp.task('copy', function() {
+  requirejsRelease({
+    copy: {
+      src: './src/**',
+      dest: './dest'
+    }
+  })
+})
+```
+
+### linter
 
 ```js
 gulp.task('linter', function() {
   requirejsRelease({
     linter: {
       src: 'src/**/*.js',
-      options: { linter: 'some-jshint-module } // Default is `"jshint"`
+      options: { linter: 'some-jshint-module' } // Default is "jshint"
     }
   })
 })
@@ -59,7 +72,7 @@ gulp.task('requirejsOptimize', function() {
           insertRequire: ['foo/bar/bop']
       },
       dest: function(destPath, filePath) {
-        // Default is `"./"`
+        // Default is "./"
         return destPath
       }
     }
@@ -81,7 +94,7 @@ gulp.task('requirejsOptimize', function() {
         }
       },
       dest: function(destPath, filePath) {
-        // Default is `"./"`
+        // Default is "./"
         return destPath
       }
     }
