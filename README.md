@@ -19,6 +19,8 @@ var requirejsRelease = require('gulp-requirejs-release')
 
 ### copy
 
+Copy source files to new destination.
+
 ```js
 gulp.task('copy', function() {
   requirejsRelease({
@@ -44,6 +46,8 @@ gulp.task('linter', function() {
 ```
 
 ### requirejs-optimize
+
+Optimize AMD modules in javascript files using the requirejs optimizer.
 
 #### Simple
 
