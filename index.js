@@ -7,9 +7,10 @@ let onEndOfStream = require('end-of-stream')
 let consumeStream = require('stream-consume')
 
 const copy = require('./src/copy')
-const linter = require('./src/linter')
-const requirejsOptimize = require('./src/requirejsOptimize')
 const htmlImports = require('./src/htmlImports')
+const linter = require('./src/linter')
+const replace = require('./src/replace')
+const requirejsOptimize = require('./src/requirejsOptimize')
 
 // functions
 const comm = require('./lib/comm')
@@ -85,6 +86,7 @@ module.exports = function(opts) {
     let iterator = function* () {
         yield* copy(opts, plugins)
         yield* linter(opts, plugins)
+        yield* replace(opts, plugins)
         yield* optimize(opts)
         yield* htmlImports(opts, plugins)
 
