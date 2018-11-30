@@ -19,5 +19,5 @@ module.exports = function* (settings, plugins) {
     yield gulp.src(comm.setBasePath(opts.src))
         .pipe(gulp.dest( settings.destPath + opts.dest ))
 
-    comm.log('Task `copy` finished.', 'Info')
+    comm.log('[gulp-requirejs-release] Task `copy` finished.', 'Info')
 }

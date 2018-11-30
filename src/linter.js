@@ -19,5 +19,5 @@ module.exports = function* (settings, plugins) {
         .pipe(jshint( opts.options || {} ))
         .pipe(jshint.reporter('default'))
 
-    comm.log('Task `linter` finished.', 'Info')
+    comm.log('[gulp-requirejs-release] Task `linter` finished.', 'Info')
 }

@@ -61,5 +61,5 @@ module.exports = function* (opts, plugins) {
         }
     }
 
-    comm.log('Task `requirejsOptimize` finished.', 'Info')
+    comm.log('[gulp-requirejs-release] Task `requirejsOptimize` finished.', 'Info')
 }

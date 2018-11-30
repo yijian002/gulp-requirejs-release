@@ -32,5 +32,5 @@ module.exports = function* (settings, plugins) {
         }))
         .pipe(gulp.dest(settings.destPath + opts.dest))
 
-    comm.log('Task `htmlImports` finished.', 'Info')
+    comm.log('[gulp-requirejs-release] Task `htmlImports` finished.', 'Info')
 }
