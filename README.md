@@ -153,6 +153,54 @@ requirejsRelease({
 })
 ```
 
+## Example
+
+A complete example
+
+```js
+
+// GulpRequirejsRelease options
+var options = {
+  basePath: './src/',
+  destPath: './dest/',
+  copy: {
+    src: '**'
+  },
+  linter: {
+    src: 'js/**/*.js'
+  },
+  replace: {
+    basePath: './dest/',
+    destPath: './dest/',
+    list: [{
+      src: '*.html',
+      replace: ['__VERSION__', '2018'],
+    }, {
+      src: 'css/*.css',
+      replace: [\.\.\/img\/(.+?)\.(jpg|png)/g, function(match, p1) {
+        return '//IMG_HOST/img/' + p1 + '.' + match.split('.').pop()
+      }],
+      dest: 'css'
+    }]
+  },
+  optimize: {
+    src: 'js/app/**/*.js',
+    options: {
+      baseUrl: './dest/',
+      mainConfigFile: './dest/js/config.json'
+    },
+    dest: function(destPath, filePath) {
+      return destPath + 'js/release'
+    }
+  },
+  sourcemaps: true
+}
+
+// Build
+requirejsRelease(options)
+```
+
+
 ---
 
 Copyright © 2018 [Vic Yang](https://github.com/yijian002)
