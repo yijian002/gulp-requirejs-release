@@ -170,8 +170,6 @@ var options = {
     src: 'js/**/*.js'
   },
   replace: {
-    basePath: './dest/',
-    destPath: './dest/',
     list: [{
       src: '*.html',
       replace: ['__VERSION__', '2018'],
