@@ -22,11 +22,13 @@ function* optimizeMaps(filePath, destPath, opts) {
     }
 
     let mapsOptions = opts.sourcemaps === true || typeof opts.sourcemaps === 'string' ? {} : opts.sourcemaps
+    let mapsPath = typeof mapsOptions.writePath === 'function' ? mapsOptions.writePath(filePath) : (mapsOptions.writePath || './')
+    let writeOptions = mapsOptions.writeOptions || {}
 
     return yield gulp.src(comm.setBasePath(filePath))
         .pipe(requirejsOptimize(opts.options || {}))
         .pipe(sourcemaps.init( mapsOptions.initOptions || {} ))
-        .pipe(sourcemaps.write( mapsOptions.writePath || './', mapsOptions.writeOptions || {} ))
+        .pipe(sourcemaps.write( mapsPath, writeOptions ))
         .pipe(gulp.dest(destPath))
 }
 
