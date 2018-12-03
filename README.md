@@ -157,6 +157,8 @@ requirejsRelease({
 
 A complete example
 
+### gulpfile.js
+
 ```js
 
 // GulpRequirejsRelease options
@@ -194,10 +196,20 @@ var options = {
   sourcemaps: true
 }
 
-// Build
-requirejsRelease(options)
+// Task build
+var gulp = require('gulp')
+var requirejsRelease = require('gulp-requirejs-release')
+
+gulp.task('build', function() {
+  requirejsRelease(options)
+})
 ```
 
+### Bash
+
+```bash
+$ gulp build
+```
 
 ---
 
