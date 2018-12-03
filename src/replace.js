@@ -32,5 +32,9 @@ module.exports = function* (settings, plugins) {
             .pipe(gulp.dest(destPath + item.dest))
     }
 
+    if(opts.callback && typeof opts.callback === 'function') {
+        yield* opts.callback(gulpReplace)
+    }
+
     comm.log('[gulp-requirejs-release] Task `replace` finished.', 'Info')
 }
