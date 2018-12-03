@@ -1,5 +1,9 @@
 # gulp-requirejs-release
 
+- A gulp plugin.
+- The project Use `requirejs`.
+- Build release environment.
+
 ## Usage
 
 ### Install
