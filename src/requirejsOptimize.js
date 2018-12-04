@@ -63,5 +63,10 @@ module.exports = function* (opts, plugins) {
         }
     }
 
-    comm.log('[gulp-requirejs-release] Task `requirejsOptimize` finished.', 'Info')
+    if(opts.sourcemaps) {
+        comm.log('[gulp-requirejs-release] Task `requirejsOptimize` and `sourcemaps` finished.', 'Info')
+    }
+    else {
+        comm.log('[gulp-requirejs-release] Task `requirejsOptimize` finished.', 'Info')
+    }
 }
