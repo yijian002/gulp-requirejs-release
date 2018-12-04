@@ -181,7 +181,7 @@ var options = {
       replace: ['__VERSION__', '2018'],
     }, {
       src: 'css/*.css',
-      replace: [\.\.\/img\/(.+?)\.(jpg|png)/g, function(match, p1) {
+      replace: [/\.\.\/img\/(.+?)\.(jpg|png)/g, function(match, p1) {
         return '//IMG_HOST/img/' + p1 + '.' + match.split('.').pop()
       }],
       dest: 'css'
