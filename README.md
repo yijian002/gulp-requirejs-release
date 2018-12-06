@@ -219,8 +219,8 @@ $ gulp build
 
 | Option| Type| Default| Description  |
 | ------|-----|--------|--------------|
-| `basePath` | String | ./ |  |
-| `destPath` | String | ./ |  |
+| `basePath` | String | `./` |  |
+| `destPath` | String | `./` |  |
 | `copy` | Object |  | [Plugin Options](#Copy options) |
 | `linter` | Object |  | [Plugin Options](#Linter options)|
 | `replace` | Object |  | [Plugin Options](#Replace options) |
@@ -243,19 +243,25 @@ $ gulp build
 
 | Name | Type| Description  |
 | ------|-----|--------------|
-| `src` | String or Array |  |
+| `basePath` | String |  |
+| `destPath` | String |  |
+| `list` | Array | `[ {src: '**.*', replace: ['str1', 'str2']}, dest: '' ]` |
+| `callback` | Function* |  |
 
 ### Optimize options
 
 | Name | Type| Description  |
 | ------|-----|--------------|
+| `basePath` | String |  |
 | `src` | String or Array |  |
+| `options` | Object |  |
+| `dest` | String or Function |  |
 
 ### Sourcemaps options
 
 | Name | Type| Description  |
 | ------|-----|--------------|
-| `src` | String or Array |  |
+|  | Boolean | Default is `false` |
 
 ---
 
