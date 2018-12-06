@@ -53,6 +53,25 @@ requirejsRelease({
 })
 ```
 
+### replace
+
+```js
+requirejsRelease({
+  replace: {
+    list: [{
+      src: '*.html',
+      replace: ['__VERSION__', '2018'],
+    }, {
+      src: 'css/*.css',
+      replace: [/\.\.\/img\/(.+?)\.(jpg|png)/g, function(match, p1) {
+        return '//IMG_HOST/img/' + p1 + '.' + match.split('.').pop()
+      }],
+      dest: 'css'
+    }]
+  }
+})
+```
+
 ### requirejs-optimize
 
 Optimize AMD modules in javascript files using the requirejs optimizer.
@@ -238,6 +257,7 @@ $ gulp build
 | Name | Type| Description  |
 | ------|-----|--------------|
 | `src` | String or Array |  |
+| `options` | Object |  |
 
 ### Replace options
 
@@ -245,8 +265,7 @@ $ gulp build
 | ------|-----|--------------|
 | `basePath` | String |  |
 | `destPath` | String |  |
-| `list` | Array | `[ {src: '**.*', replace: ['str1', 'str2']} ]` |
-| `dest` | String |  |
+| `list` | Array | `[ {src: '**.*', replace: ['str1', 'str2'], dest: ''} ]` |
 | `callback` | Function* |  |
 
 ### Optimize options
@@ -255,7 +274,7 @@ $ gulp build
 | ------|-----|--------------|
 | `basePath` | String |  |
 | `src` | String or Array |  |
-| `options` | Object |  |
+| `options` | Object or Function |  |
 | `dest` | String or Function |  |
 
 ### Sourcemaps options
@@ -263,6 +282,9 @@ $ gulp build
 | Name | Type| Description  |
 | ------|-----|--------------|
 |  | Boolean | Default is `false` |
+| `initOptions` | Object |  |
+| `writePath` | String |  |
+| `writeOptions` | Object |  |
 
 ---
 
