@@ -240,11 +240,11 @@ $ gulp build
 | ------|-----|--------|--------------|
 | `basePath` | String | `./` |  |
 | `destPath` | String | `./` |  |
-| `copy` | Object |  | [Plugin Options](#Copy options) |
-| `linter` | Object |  | [Plugin Options](#Linter options)|
-| `replace` | Object |  | [Plugin Options](#Replace options) |
-| `optimize` | Object |  | [Plugin Options](#Optimize options) |
-| `sourcemaps` | Object or Boolean |  | [Plugin Options](#Sourcemaps options) |
+| `copy` | Object |  | [Plugin Options](#copy-options) |
+| `linter` | Object |  | [Plugin Options](#linter-options)|
+| `replace` | Object |  | [Plugin Options](#replace-options) |
+| `optimize` | Object |  | [Plugin Options](#optimize-options) |
+| `sourcemaps` | Object or Boolean |  | [Plugin Options](#sourcemaps-options) |
 
 ### Copy options
 
