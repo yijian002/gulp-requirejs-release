@@ -11,7 +11,7 @@ function getDest(filePath, opts) {
 }
 
 function* optimize(filePath, destPath, options) {
-    return yield gulp.src(comm.setBasePath(filePath))
+    return yield gulp.src(filePath)
         .pipe(requirejsOptimize(options || {}))
         .pipe(gulp.dest(destPath))
 }
@@ -25,7 +25,7 @@ function* optimizeMaps(filePath, destPath, opts) {
     let mapsPath = typeof mapsOptions.writePath === 'function' ? mapsOptions.writePath(filePath) : (mapsOptions.writePath || './')
     let writeOptions = mapsOptions.writeOptions || {}
 
-    return yield gulp.src(comm.setBasePath(filePath))
+    return yield gulp.src(filePath)
         .pipe(requirejsOptimize(opts.options || {}))
         .pipe(sourcemaps.init( mapsOptions.initOptions || {} ))
         .pipe(sourcemaps.write( mapsPath, writeOptions ))
@@ -56,10 +56,10 @@ module.exports = function* (opts, plugins) {
         let destPath = getDest(filePath, opts)
 
         if(opts.sourcemaps) {
-            yield* optimizeMaps(filePath, destPath, opts)
+            yield* optimizeMaps(comm.setBasePath(filePath, opts.basePath), destPath, opts)
         }
         else {
-            yield* optimize(filePath, destPath, opts.options)
+            yield* optimize(comm.setBasePath(filePath, opts.basePath), destPath, opts.options)
         }
     }
 
