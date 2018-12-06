@@ -1,6 +1,6 @@
 {
   "name": "gulp-requirejs-release",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "author": "Vic Yang",
   "main": "index.js",
