@@ -245,7 +245,8 @@ $ gulp build
 | ------|-----|--------------|
 | `basePath` | String |  |
 | `destPath` | String |  |
-| `list` | Array | `[ {src: '**.*', replace: ['str1', 'str2']}, dest: '' ]` |
+| `list` | Array | `[ {src: '**.*', replace: ['str1', 'str2']} ]` |
+| `dest` | String |  |
 | `callback` | Function* |  |
 
 ### Optimize options
