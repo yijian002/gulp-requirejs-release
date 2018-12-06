@@ -215,6 +215,48 @@ gulp.task('build', function() {
 $ gulp build
 ```
 
+## API
+
+| Option| Type| Default| Description  |
+| ------|-----|--------|--------------|
+| `basePath` | String | ./ |  |
+| `destPath` | String | ./ |  |
+| `copy` | Object |  | [Plugin Options](#Copy options) |
+| `linter` | Object |  | [Plugin Options](#Linter options)|
+| `replace` | Object |  | [Plugin Options](#Replace options) |
+| `optimize` | Object |  | [Plugin Options](#Optimize options) |
+| `sourcemaps` | Object or Boolean |  | [Plugin Options](#Sourcemaps options) |
+
+### Copy options
+
+| Name | Type| Description  |
+| ------|-----|--------------|
+| `src` | String or Array |  |
+
+### Linter options
+
+| Name | Type| Description  |
+| ------|-----|--------------|
+| `src` | String or Array |  |
+
+### Replace options
+
+| Name | Type| Description  |
+| ------|-----|--------------|
+| `src` | String or Array |  |
+
+### Optimize options
+
+| Name | Type| Description  |
+| ------|-----|--------------|
+| `src` | String or Array |  |
+
+### Sourcemaps options
+
+| Name | Type| Description  |
+| ------|-----|--------------|
+| `src` | String or Array |  |
+
 ---
 
 Copyright © 2018 [Vic Yang](https://github.com/yijian002)
