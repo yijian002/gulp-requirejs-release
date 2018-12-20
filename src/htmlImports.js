@@ -20,17 +20,20 @@ module.exports = function* (settings, plugins) {
     let gulp = plugins.gulp
     let gulpHtmlImports = plugins.htmlImports
 
+    let destPath = opts.destPath || settings.destPath
     opts.dest = opts.dest || ''
+
     if (typeof opts.src === 'string') {
         opts.src = [opts.src]
     }
 
-    yield gulp.src(comm.setBasePath(opts.src))
+    yield gulp.src(comm.setBasePath(opts.src, opts.basePath))
         .pipe(gulpHtmlImports({
-            componentsPath: opts.componentsPath,
-            template: opts.template || {}
+            componentsPath: comm.setBasePath(opts.componentsPath, opts.basePath),
+            template: opts.template || {},
+            restore: opts.restore || false
         }))
-        .pipe(gulp.dest(settings.destPath + opts.dest))
+        .pipe(gulp.dest(destPath + opts.dest))
 
     comm.log('[gulp-requirejs-release] Task `htmlImports` finished.', 'Info')
 }
