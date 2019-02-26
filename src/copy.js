@@ -10,9 +10,11 @@ module.exports = function* (settings, plugins) {
         comm.log('Not found the param `src`.', 'Error.option.copy')
         return
     }
-
+    
     opts.dest = opts.dest || ''
 
+    comm.log('[gulp-requirejs-release] Task `copy` starting.', 'Info')
+    
     // Init plugins
     let gulp = plugins.gulp
 

@@ -10,6 +10,8 @@ module.exports = function* (settings, plugins) {
     const gulp = plugins.gulp
     const gulpReplace = plugins.replace
 
+    comm.log('[gulp-requirejs-release] Task `replace` starting.', 'Info')
+    
     let destPath = opts.destPath || settings.destPath
 
     for (let i = 0; i < opts.list.length; i++) {

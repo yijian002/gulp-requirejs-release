@@ -11,6 +11,8 @@ module.exports = function* (settings, plugins) {
         return
     }
 
+    comm.log('[gulp-requirejs-release] Task `linter` starting.', 'Info')
+    
     // Init plugins
     let gulp = plugins.gulp
     let jshint = plugins.jshint

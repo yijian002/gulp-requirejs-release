@@ -16,6 +16,8 @@ module.exports = function* (settings, plugins) {
         return
     }
 
+    comm.log('[gulp-requirejs-release] Task `htmlImports` starting.', 'Info')
+
     // Init plugins
     let gulp = plugins.gulp
     let gulpHtmlImports = plugins.htmlImports

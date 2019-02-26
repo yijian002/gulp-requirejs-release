@@ -42,6 +42,8 @@ module.exports = function* (opts, plugins) {
         return
     }
 
+    comm.log('[gulp-requirejs-release] Task `requirejsOptimize` starting.', 'Info')
+
     // Init plugins
     gulp = plugins.gulp
     requirejsOptimize = plugins.requirejsOptimize
