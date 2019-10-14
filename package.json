@@ -1,6 +1,6 @@
 {
   "name": "gulp-requirejs-release",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "author": "Vic Yang",
   "main": "index.js",
@@ -12,6 +12,7 @@
     "url": "git+https://github.com/yijian002/gulp-requirejs-release.git"
   },
   "dependencies": {
+    "end-of-stream": "^1.4.1",
     "gulp": "^3.9.1",
     "gulp-html-imports": "^1.0.2",
     "gulp-jshint": "^2.1.0",
@@ -19,7 +20,8 @@
     "gulp-replace": "^1.0.0",
     "gulp-requirejs-optimize": "^1.3.0",
     "gulp-sourcemaps": "^2.6.4",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "stream-consume": "^0.1.1"
   },
   "devDependencies": {},
   "keywords": [
