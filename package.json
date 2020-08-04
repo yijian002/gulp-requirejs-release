@@ -1,6 +1,6 @@
 {
   "name": "gulp-requirejs-release",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "author": "Vic Yang",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "dependencies": {
     "end-of-stream": "^1.4.1",
     "gulp": "^3.9.1",
-    "gulp-html-imports": "^1.0.2",
+    "gulp-html-imports": "^1.0.6",
     "gulp-jshint": "^2.1.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-replace": "^1.0.0",
